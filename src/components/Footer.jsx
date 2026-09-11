@@ -184,8 +184,8 @@ export default function Footer() {
         </div>
 
         {/* Massive Watermark Typography matching outfit.hellohello.is */}
-        <div className="pt-8 border-t border-white/10">
-          <div className="text-[11.5vw] sm:text-[12.5vw] md:text-[13vw] font-[900] tracking-tighter uppercase leading-[0.85] text-white/10 hover:text-white/20 transition-colors cursor-default select-none text-center">
+        <div className="pt-8 border-t border-white/10 overflow-hidden">
+          <div className="text-[9.8vw] sm:text-[9.5vw] md:text-[8.5vw] lg:text-[13vw] font-[900] tracking-tighter uppercase leading-[0.85] text-white/10 hover:text-white/20 transition-colors cursor-default select-none text-center break-normal">
             LOVE MY DECOR
           </div>
 

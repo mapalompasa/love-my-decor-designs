@@ -37,7 +37,7 @@ export default function ProjectModal({ project, onClose, onSelectForBooking }) {
       aria-modal="true"
     >
       <div
-        className="relative w-full max-w-5xl max-h-[90vh] bg-[#111111] border border-white/20 text-white overflow-y-auto flex flex-col shadow-2xl"
+        className="relative w-full max-w-5xl max-h-[90dvh] bg-[#111111] border border-white/20 text-white overflow-y-auto overscroll-contain flex flex-col shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Header Bar */}
@@ -64,7 +64,7 @@ export default function ProjectModal({ project, onClose, onSelectForBooking }) {
           
           {/* Main Title & Venue info */}
           <div>
-            <h2 className="text-xl sm:text-3xl md:text-5xl font-[900] tracking-tighter uppercase leading-tight mb-2 sm:mb-3">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[900] tracking-tighter uppercase leading-tight mb-2 sm:mb-3">
               {project.title}
             </h2>
             <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm text-neutral-300 font-medium">

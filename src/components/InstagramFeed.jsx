@@ -83,6 +83,12 @@ export default function InstagramFeed() {
                   loading="lazy"
                 />
                 
+                {/* Always-visible compact indicator on mobile/tablet touch */}
+                <div className="absolute bottom-2 left-2 right-2 flex items-center justify-between bg-black/80 backdrop-blur-md px-2.5 py-1.5 text-[10px] font-mono text-neutral-300 border border-white/10 lg:hidden pointer-events-none">
+                  <span className="text-[#c966d4] truncate max-w-[140px]">{brandConfig.socials.instagram.handle}</span>
+                  <span>♥ {item.likes}</span>
+                </div>
+
                 {/* Hover overlay with caption & likes */}
                 <div className="absolute inset-0 bg-[#120d14]/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-between text-xs text-white">
                   <div className="flex items-center justify-between font-mono text-[11px] text-[#c966d4]">

@@ -25,12 +25,12 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#080808] text-white flex flex-col selection:bg-luxury-cream selection:text-black">
+    <div className="min-h-screen bg-[#080808] text-white flex flex-col selection:bg-luxury-cream selection:text-black overflow-x-hidden w-full">
       {/* Fixed Brutalist Header */}
       <TopNav />
 
       {/* Main Content Area */}
-      <main className="flex-grow">
+      <main className="flex-grow w-full overflow-x-hidden">
         {/* Massive Typographic Hero */}
         <HeroSection />
 

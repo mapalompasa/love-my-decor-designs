@@ -12,15 +12,36 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 130px;
+  scroll-padding-top: 140px;
   -webkit-text-size-adjust: 100%;
   touch-action: manipulation;
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 148px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: 130px;
+  }
 }
 
 /* Touch and mobile ergonomics */
 body {
   -webkit-tap-highlight-color: transparent;
   padding-bottom: env(safe-area-inset-bottom, 0px);
+  overflow-x: hidden;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Hide scrollbars for clean horizontal touch carousels/tabs */

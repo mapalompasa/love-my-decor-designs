@@ -54,15 +54,15 @@ export default function TopNav() {
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-20 flex items-center justify-between relative">
         
         {/* Left: Brand Identity with Official Logo */}
-        <div className="flex items-center gap-4 sm:gap-6">
-          <a href="#" className="flex items-center gap-3 sm:gap-3.5 group">
+        <div className="flex items-center gap-2.5 sm:gap-6">
+          <a href="#" className="flex items-center gap-2 sm:gap-3.5 group">
             <img
               src="/logo.jpg"
               alt="Love My Decor Designs Logo"
-              className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-full object-cover border-2 border-[#83338a] shadow-lg shadow-[#83338a]/20 group-hover:border-[#c966d4] transition-all"
+              className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-full object-cover border-2 border-[#83338a] shadow-lg shadow-[#83338a]/20 group-hover:border-[#c966d4] transition-all flex-shrink-0"
             />
             <div className="flex flex-col">
-              <span className="font-[900] text-base sm:text-lg md:text-xl tracking-tighter uppercase leading-none text-white group-hover:text-[#c966d4] transition-colors">
+              <span className="font-[900] text-sm sm:text-lg md:text-xl tracking-tighter uppercase leading-none text-white group-hover:text-[#c966d4] transition-colors">
                 {brandConfig.shortName}®
               </span>
               <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-[#d6bdda] font-medium mt-1">
@@ -118,7 +118,7 @@ export default function TopNav() {
 
       {/* Mobile & Tablet Full-Width Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-full bg-[#0a0a0a]/98 backdrop-blur-xl border-b border-white/15 px-6 py-6 sm:py-8 shadow-2xl max-h-[calc(100vh-80px)] overflow-y-auto animate-fadeIn">
+        <div className="lg:hidden fixed inset-x-0 top-full bg-[#0a0a0a]/98 backdrop-blur-xl border-b border-white/15 px-6 py-6 sm:py-8 shadow-2xl max-h-[calc(100dvh-90px)] overflow-y-auto overscroll-contain animate-fadeIn">
           <div className="flex flex-col gap-2 text-base sm:text-lg font-[900] tracking-tighter uppercase">
             {navLinks.map((link) => (
               <a

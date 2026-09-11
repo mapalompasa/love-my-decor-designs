@@ -5,6 +5,19 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: 'class',
+  safelist: [
+    'lg:col-span-4',
+    'lg:col-span-5',
+    'lg:col-span-6',
+    'lg:col-span-7',
+    'lg:col-span-8',
+    'lg:col-span-9',
+    'lg:col-span-10',
+    'lg:col-span-16',
+    'md:col-span-8',
+    'md:col-span-16',
+    'col-span-8',
+  ],
   theme: {
     extend: {
       gridTemplateColumns: {

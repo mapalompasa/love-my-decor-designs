@@ -102,12 +102,12 @@ export default function BookingPortal({ prefilledProject, onClearPrefilledProjec
                 <IconCalendar className="w-3.5 h-3.5 stroke-[#c966d4]" />
                 Direct Concierge Booking
               </span>
-              <h2 className="text-3xl sm:text-5xl md:text-6xl font-[900] tracking-tighter uppercase text-white leading-none">
+              <h2 className="text-2xl sm:text-5xl md:text-6xl font-[900] tracking-tighter uppercase text-white leading-none">
                 The Booking Portal
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-neutral-400 max-w-md">
-              Complete the consultation specifications below. Upon submission, an encrypted WhatsApp dispatch will be automatically pre-filled and sent to Selina Machima at <strong>+260 979 176 151</strong> (demo mode active: WhatsApp dispatch restricted).
+              Complete the consultation specifications below. Upon submission, an encrypted WhatsApp dispatch will be automatically pre-filled and sent to Selina Machima at <strong>+260 979 176 151</strong> <span className="hidden sm:inline">(demo mode active: WhatsApp dispatch restricted)</span><span className="sm:hidden text-[#c966d4]"> — Demo Mode</span>.
             </p>
           </div>
 
@@ -213,7 +213,7 @@ export default function BookingPortal({ prefilledProject, onClearPrefilledProjec
 
           {/* Right Column (Desktop: lg:col-span-10 untouched) */}
           <div className="col-span-8 md:col-span-16 lg:col-span-10">
-            <form onSubmit={handleSubmit} className="space-y-6 bg-[#121212] border border-white/10 p-5 sm:p-8 md:p-10">
+            <form onSubmit={handleSubmit} className="space-y-6 bg-[#121212] border border-white/10 p-4 sm:p-8 md:p-10">
               
               <div className="border-b border-white/10 pb-4 mb-6 flex items-center justify-between">
                 <span className="text-xs uppercase font-mono tracking-widest text-neutral-400">
@@ -309,13 +309,13 @@ export default function BookingPortal({ prefilledProject, onClearPrefilledProjec
                 <label className="block text-xs uppercase font-mono tracking-widest text-neutral-300 mb-2">
                   05. Decor Budget Tier *
                 </label>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                   {brandConfig.budgetTiers.map((tier) => (
                     <button
                       type="button"
                       key={tier.id}
                       onClick={() => setFormData((prev) => ({ ...prev, budgetTier: tier.title }))}
-                      className={`p-4 text-left border transition-all flex flex-col justify-between ${
+                      className={`p-3.5 sm:p-4 text-left border transition-all flex flex-col justify-between ${
                         formData.budgetTier === tier.title
                           ? 'bg-[#83338a] text-white border-[#83338a] shadow-lg shadow-[#83338a]/30'
                           : 'bg-black/40 text-neutral-300 border-white/10 hover:border-white/30'
@@ -338,7 +338,7 @@ export default function BookingPortal({ prefilledProject, onClearPrefilledProjec
               </div>
 
               {/* Row 5: Client Contact Info */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 pt-2">
                 <div>
                   <label htmlFor="name" className="block text-xs uppercase font-mono tracking-widest text-neutral-300 mb-2">
                     06. Full Name *
@@ -388,20 +388,24 @@ export default function BookingPortal({ prefilledProject, onClearPrefilledProjec
                 ></textarea>
               </div>
 
-              {/* Submit Button */}
+              {/* Submit Button with Mobile Wrap Protection */}
               <div className="pt-4 border-t border-white/10">
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-3 py-4 md:py-5 bg-[#83338a] text-white font-[900] text-sm md:text-base uppercase tracking-tight hover:bg-[#993da3] transition-all shadow-xl shadow-[#83338a]/30 group cursor-pointer active:scale-[0.99] border border-[#c966d4]/40"
+                  className="w-full flex flex-wrap items-center justify-center gap-2 sm:gap-3 py-3.5 sm:py-4 md:py-5 bg-[#83338a] text-white font-[900] text-xs sm:text-sm md:text-base uppercase tracking-tight hover:bg-[#993da3] transition-all shadow-xl shadow-[#83338a]/30 group cursor-pointer active:scale-[0.99] border border-[#c966d4]/40"
                 >
-                  <IconWhatsApp className="w-5 h-5 fill-white" />
-                  <span>Submit Quotation Inquiry</span>
-                  <span className="text-[10px] font-mono tracking-wider px-2 py-0.5 bg-black/40 border border-[#c966d4]/40 text-[#f6eff8]">
-                    DEMO MODE
-                  </span>
-                  <span className="transform transition-transform duration-300 group-hover:translate-x-1.5">
-                    <IconDiagonalArrow className="w-4 h-4" />
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <IconWhatsApp className="w-4 h-4 sm:w-5 sm:h-5 fill-white flex-shrink-0" />
+                    <span>Submit Quotation Inquiry</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-mono tracking-wider px-2 py-0.5 bg-black/40 border border-[#c966d4]/40 text-[#f6eff8]">
+                      DEMO MODE
+                    </span>
+                    <span className="transform transition-transform duration-300 group-hover:translate-x-1.5">
+                      <IconDiagonalArrow className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    </span>
+                  </div>
                 </button>
                 <p className="text-[11px] text-center text-neutral-400 font-mono mt-3">
                   * Demo mode active: WhatsApp submission is restricted.
