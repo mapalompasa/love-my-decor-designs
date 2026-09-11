@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-cream: #f6eff8;
+  --color-gold: #c966d4;
+  --color-brand: #83338a;
+  --color-brand-light: #9f45a7;
+  --color-dark: #080808;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 130px;
+  -webkit-text-size-adjust: 100%;
+  touch-action: manipulation;
+}
+
+/* Touch and mobile ergonomics */
+body {
+  -webkit-tap-highlight-color: transparent;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Hide scrollbars for clean horizontal touch carousels/tabs */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom smooth dark scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #404040;
+}
+
+/* Smooth kinetic typography and hover transitions */
+.arrow-hover {
+  transition: transform 0.45s cubic-bezier(0.8, -0.01, 0.34, 1.01);
+}
+.group:hover .arrow-hover {
+  transform: translateX(0.5em);
+}
+
+.arrow-diagonal-hover {
+  transition: transform 0.45s cubic-bezier(0.8, -0.01, 0.34, 1.01);
+}
+.group:hover .arrow-diagonal-hover {
+  transform: translate(3px, -3px);
+}
+
+/* Structural border utilities */
+.border-hairline {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.border-subtle {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+/* Custom focus ring */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #83338a;
+  box-shadow: 0 0 0 1px #83338a;
+}
