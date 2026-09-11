@@ -118,38 +118,48 @@ export default function TopNav() {
 
       {/* Mobile & Tablet Full-Width Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-full bg-[#0a0a0a]/98 backdrop-blur-xl border-b border-white/15 px-6 py-6 sm:py-8 shadow-2xl max-h-[calc(100dvh-90px)] overflow-y-auto overscroll-contain animate-fadeIn">
-          <div className="flex flex-col gap-2 text-base sm:text-lg font-[900] tracking-tighter uppercase">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-neutral-200 hover:text-[#c966d4] active:text-[#c966d4] flex items-center justify-between border-b border-white/10 py-3.5 min-h-[48px] transition-colors"
-              >
-                <span>{link.label}</span>
-                <IconDiagonalArrow className="w-4 h-4 opacity-60" />
-              </a>
-            ))}
-          </div>
+        <>
+          {/* Full-Screen Dimmed Backdrop Scrim */}
+          <div
+            className="lg:hidden fixed inset-0 bg-black/85 backdrop-blur-sm -z-10 transition-opacity"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
 
-          <div className="mt-6 pt-5 border-t border-white/10 flex flex-col gap-4">
-            <div className="text-xs text-neutral-400 font-mono flex items-center justify-between">
-              <span>LUSAKA [CAT]</span>
-              <span className="text-white font-bold">{lusakaTime}</span>
+          {/* Opaque, distinct dark luxury dropdown container */}
+          <div className="lg:hidden absolute top-full left-0 right-0 w-full bg-[#120815] border-b-2 border-[#83338a] shadow-[0_25px_60px_rgba(0,0,0,0.98)] px-4 sm:px-8 py-5 sm:py-6 max-h-[calc(100dvh-75px)] overflow-y-auto overscroll-contain animate-fadeIn z-40">
+            <div className="flex flex-col gap-2 text-sm sm:text-base font-[900] tracking-tight uppercase">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-neutral-100 hover:text-white hover:bg-[#25142b] active:bg-[#25142b] flex items-center justify-between px-4 py-3.5 bg-[#1c0f22] border border-[#83338a]/40 active:border-[#c966d4] min-h-[48px] transition-all shadow-sm"
+                >
+                  <span>{link.label}</span>
+                  <IconDiagonalArrow className="w-3.5 h-3.5 text-[#c966d4]" />
+                </a>
+              ))}
             </div>
 
-            <a
-              href={`https://wa.me/${brandConfig.whatsappNumber}?text=${encodeURIComponent("Hello Selina Machima, I am looking to book Love My Decor Designs for my upcoming event.")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-3 py-4 bg-[#83338a] text-white font-[900] text-xs sm:text-sm uppercase tracking-tight hover:bg-[#993da3] active:scale-[0.99] transition-all shadow-lg shadow-[#83338a]/30 min-h-[48px]"
-            >
-              <IconWhatsApp className="w-4 h-4 fill-white" />
-              <span>Chat on WhatsApp (+260 979 176 151)</span>
-            </a>
+            <div className="mt-5 pt-4 border-t border-[#83338a]/30 flex flex-col gap-3.5">
+              <div className="text-xs text-neutral-300 font-mono flex items-center justify-between px-1">
+                <span className="text-[#d6bdda]">LUSAKA [CAT]</span>
+                <span className="text-white font-bold bg-[#1c0f22] px-2.5 py-1 border border-[#83338a]/40">{lusakaTime}</span>
+              </div>
+
+              <a
+                href={`https://wa.me/${brandConfig.whatsappNumber}?text=${encodeURIComponent("Hello Selina Machima, I am looking to book Love My Decor Designs for my upcoming event.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center gap-3 py-3.5 bg-[#83338a] hover:bg-[#993da3] text-white font-[900] text-xs sm:text-sm uppercase tracking-tight active:scale-[0.99] transition-all shadow-lg shadow-[#83338a]/30 min-h-[48px] border border-[#c966d4]/40"
+              >
+                <IconWhatsApp className="w-4 h-4 fill-white" />
+                <span>Chat on WhatsApp (+260 979 176 151)</span>
+              </a>
+            </div>
           </div>
-        </div>
+        </>
       )}
     </header>
   );
